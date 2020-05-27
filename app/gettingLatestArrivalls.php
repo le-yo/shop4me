@@ -11,7 +11,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM posts WHERE qty > '0' AND qty != 'NULL'ORDER BY dateCreated ASC LIMIT 6;");
+	$stmt = $conn->prepare("SELECT * FROM posts WHERE qty > '0' AND qty != 'NULL'ORDER BY dateCreated DESC LIMIT 10;");
 	
 	//executing the query 
 	$stmt->execute();
