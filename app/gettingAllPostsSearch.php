@@ -11,7 +11,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM posts WHERE qty > '0' AND qty != 'NULL' ORDER BY dateCreated ASC;");
+	$stmt = $conn->prepare("SELECT * FROM posts ORDER BY dateCreated ASC;");
 	
 	//executing the query 
 	$stmt->execute();
