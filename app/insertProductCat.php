@@ -5,15 +5,17 @@
     $response = array(); 
     
     if(isset($_REQUEST['id']) && isset($_REQUEST['image']) 
-    && isset($_REQUEST['category']) && isset($_REQUEST['dateCreated'])){
+    && isset($_REQUEST['category']) && isset($_REQUEST['dateCreated'])
+    && isset($_REQUEST['shop_id'])){
         
         	//Getting post data 
 		$id = $_REQUEST['id'];
 		$image = $_REQUEST['image'];
 		$category = $_REQUEST['category'];
 		$dateCreated = $_REQUEST['dateCreated'];
+		$shop_id = $_REQUEST['shop_id'];
 
-        $adding = "INSERT INTO product_cats (id,image,category,dateCreated) VALUES ('$id','$image','$category','$dateCreated')";
+        $adding = "INSERT INTO product_cats (id,image,category,dateCreated,shop_id) VALUES ('$id','$image','$category','$dateCreated','$shop_id')";
        
        $result = mysqli_query($conn,$adding);
         
