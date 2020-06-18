@@ -1,4 +1,6 @@
 <?php 
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	require_once('dbConnect.php');
 	
@@ -8,8 +10,10 @@
 		die();
 	}
 	
+	$shop_id = $_POST['shop_id'];
+	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM product_cats ORDER BY dateCreated DESC;");
+	$stmt = $conn->prepare("SELECT * FROM product_cats WHERE shop_id = '$shop_id' ORDER BY dateCreated DESC;");
 	
 	//executing the query 
 	$stmt->execute();
@@ -35,3 +39,5 @@
 	//displaying the result in json format 
 	echo json_encode($products);
 	?>
+
+}
