@@ -11,13 +11,12 @@ jobs:
     name: Deploy Shop4Me
     runs-on: ubuntu-latest
     steps:
-      - name: Setup SSH Keys and known_hosts
-        run: | 
-            mkdir -p ~/.ssh
-            echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-            chmod 600 ~/.ssh/id_rsa
-            ssh-keyscan github.com >> ~/.ssh/known_hosts
-            ssh-keyscan ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-            ssh root@${{ secrets.SERVER_IP }}
+      - name: Deploy Shop4Me
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
             cd /var/www/shop4me
             git pull origin master
+          host: ${{ secrets.SERVER_IP }}
+          user: root
+          key: ${{ secrets.SSH_PRIVATE_KEY}}
