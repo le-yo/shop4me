@@ -14,7 +14,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM ads;");
+	$stmt = $conn->prepare("SELECT * FROM ads ORDER BY id DESC;");
 	
 	//executing the query 
 	$stmt->execute();
