@@ -14,7 +14,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM ads ORDER BY docRef ASC;");
+	$stmt = $conn->prepare("SELECT * FROM ads;");
 	
 	//executing the query 
 	$stmt->execute();
