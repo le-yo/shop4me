@@ -13,11 +13,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		die();
 	}
-	
+	//DATE(updated_at)
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM posts WHERE category = '$category' AND shop_id = '$shop_id' AND qty > '0' AND qty != 'NULL'ORDER BY dateCreated ASC;");
+	$stmt = $conn->prepare("SELECT * FROM posts WHERE category = '$category' AND shop_id = '$shop_id' AND qty > '0' AND qty != 'NULL' ORDER BY DATE(dateCreated) DESC;");
 	
 	//executing the query 
 	$stmt->execute();
