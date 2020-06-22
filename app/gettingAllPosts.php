@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM posts WHERE category = '$category' AND shop_id = '$shop_id' AND qty > '0' AND qty != 'NULL' ORDER BY DATE(dateCreated) DESC;");
+	$stmt = $conn->prepare("SELECT * FROM posts WHERE category = '$category' AND shop_id = '$shop_id' AND qty > '0' AND qty != 'NULL' ORDER BY dateCreated DESC;");
 	
 	//executing the query 
 	$stmt->execute();
