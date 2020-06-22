@@ -12,7 +12,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = 'pending' AND deleted = 'no' AND shipped_status = 'on packaging' ORDER BY date DESC;");
+	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = 'pending' AND deleted = 'no' AND shipped_status = 'on packaging' ORDER BY date DESC LIMIT 2;");
 	
 	//executing the query 
 	$stmt->execute();
