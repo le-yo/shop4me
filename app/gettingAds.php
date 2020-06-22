@@ -20,7 +20,7 @@
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($docRef,$imageUrl);
+	$stmt->bind_result($id,$docRef,$imageUrl);
 	
 	$products['ads'] = array(); 
 	
