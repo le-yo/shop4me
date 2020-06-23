@@ -11,7 +11,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM posts ORDER BY dateCreated ASC;");
+	$stmt = $conn->prepare("SELECT * FROM posts ORDER BY dateCreated ASC LIMIT 1000;");
 	
 	//executing the query 
 	$stmt->execute();
