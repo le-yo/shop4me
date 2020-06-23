@@ -1,6 +1,9 @@
 <?php 
+if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	require_once('dbConnect.php');
+	
+	$status = $_POST['status'];
 	
 	//Checking if any error occured while connecting
 	if (mysqli_connect_errno()) {
@@ -11,7 +14,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM shops WHERE status = 'active' ORDER BY dateCreated DESC;");
+	$stmt = $conn->prepare("SELECT * FROM shops WHERE status = '$status' ORDER BY dateCreated DESC;");
 	
 	//executing the query 
 	$stmt->execute();
@@ -45,6 +48,8 @@
 	
 	//displaying the result in json format 
 	echo json_encode($products);
+	
+}
 	
 
 	?>
