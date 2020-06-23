@@ -9,7 +9,7 @@
 	}
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM product_cats  ORDER BY category ASC;");
+	$stmt = $conn->prepare("SELECT * FROM product_cats WHERE category NOT LIKE 'ALCOHOL' AND category NOT LIKE 'POMBE' ORDER BY RAND() ASC LIMIT 8;");
 	
 	//executing the query 
 	$stmt->execute();
