@@ -9,7 +9,7 @@
 	}
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM shop_types ORDER BY dateCreated ASC;");
+	$stmt = $conn->prepare("SELECT * FROM shop_types ORDER BY category ASC;");
 	
 	//executing the query 
 	$stmt->execute();
