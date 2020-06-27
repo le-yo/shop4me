@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 	$response = array();
 
-	if($result->num_rows >= 1) {
+	if($result->num_rows >0) {
 
         $response["status"] = "0";
         $response["message"] = "Exixts.";
