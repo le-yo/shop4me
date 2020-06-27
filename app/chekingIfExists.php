@@ -3,11 +3,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	require_once('dbConnect.php');
 	
-	$driver_id = $_POST['driver_id'];
+	$id_to_chek = $_POST['id_to_chek'];
 	$table = $_POST['table'];
+	$id = $_POST['id'];
 
 
-	$sql = "SELECT * FROM '$table' WHERE driver_id = '$driver_id'";
+	$sql = "SELECT * FROM '$table' WHERE '$id_to_chek' = '$id'";
 	$result = $conn->query($sql);
 
 	$response = array();
