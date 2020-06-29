@@ -9,11 +9,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
 	$sql = "SELECT * FROM '$table' WHERE '$id_to_chek' = '$id'";
-	$result = $conn->query($sql);
+	
+	$check = mysqli_fetch_array(mysqli_query($conn,$sql));
+	//$result = $conn->query($sql);
 
 	$response = array();
 
-	if($result->num_rows >0) {
+	if(isset($check)) {
 
         $response["status"] = "0";
         $response["message"] = "Exixts.";
