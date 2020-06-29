@@ -13,18 +13,20 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$check = mysqli_fetch_array(mysqli_query($conn,$sql));
 	//$result = $conn->query($sql);
 
-	$response = array();
+	//$response = array();
 
 	if(isset($check)) {
 
-        $response["status"] = "0";
-        $response["message"] = "Exixts.";
+        /*$response["status"] = "0";
+        $response["message"] = "Exixts.";*/
+		echo '0';
 
 	} else {
-        $response["status"] = "1";
-        $response["message"] = "Not there..!";
+        /*$response["status"] = "1";
+        $response["message"] = "Not there..!";*/
+		echo '1';
 	}
-        echo json_encode($response);
+       // echo json_encode($response);
 
 }
 
