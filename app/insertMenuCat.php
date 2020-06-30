@@ -4,14 +4,16 @@
     
     $response = array(); 
     
-    if(isset($_REQUEST['id']) && isset($_REQUEST['cat']) && isset($_REQUEST['type'])){
+    if(isset($_REQUEST['id']) && isset($_REQUEST['cat']) && isset($_REQUEST['type']) && isset($_REQUEST['shop_id'])){
         
         	//Getting post data 
 		$id = $_REQUEST['id'];
-		$cat = $_REQUEST['cat'];
+		$cat = $_REQUEST['cat'];	    
+		$shop_id = $_REQUEST['shop_id'];
 		$type = $_REQUEST['type'];
+	  
 
-        $adding = "INSERT INTO menu_cats (id,cat,type) VALUES ('$id','$cat','$type')";
+        $adding = "INSERT INTO menu_cats (id,cat,type,shop_id) VALUES ('$id','$cat','$type','$shop_id')";
        
        $result = mysqli_query($conn,$adding);
         
