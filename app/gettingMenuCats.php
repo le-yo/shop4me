@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($id,$cat,$type);
+	$stmt->bind_result($id,$cat,$type,$shop_id);
 	
 	$products['menus'] = array(); 
 	
