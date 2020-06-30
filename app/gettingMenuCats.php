@@ -6,6 +6,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	$type = $_POST['type'];
+	$shop_id = $_POST['shop_id'];
 	
 	
 	//Checking if any error occured while connecting
@@ -15,7 +16,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	}
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM menu_cats WHERE type='$type' ORDER BY cat ASC;");
+	$stmt = $conn->prepare("SELECT * FROM menu_cats WHERE type='$type' AND shop_id = '$shop_id' ORDER BY cat ASC;");
 	
 	//executing the query 
 	$stmt->execute();
