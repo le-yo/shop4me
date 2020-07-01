@@ -4,14 +4,18 @@
     
     $response = array(); 
     
-    if(isset($_REQUEST['imageUrl']) && isset($_REQUEST['docRef'])){
+    if(isset($_REQUEST['imageUrl']) && isset($_REQUEST['docRef'])
+      && isset($_REQUEST['shop_id']) && isset($_REQUEST['shop_name'])
+      && isset($_REQUEST['isShop'])){
         
         	//Getting post data 
 		$docRef = $_REQUEST['docRef'];
-
 		$imageUrl = $_REQUEST['imageUrl'];
+		$shop_id = $_REQUEST['shop_id'];
+		$shop_name = $_REQUEST['shop_name'];
+		$isShop = $_REQUEST['isShop'];
 
-        $adding = "INSERT INTO ads (docRef,imageUrl) VALUES ('$docRef','$imageUrl')";
+        $adding = "INSERT INTO ads (docRef,imageUrl,shop_id,shop_name,isShop) VALUES ('$docRef','$imageUrl','$shop_id','$shop_name','$isShop')";
        
        $result = mysqli_query($conn,$adding);
         
