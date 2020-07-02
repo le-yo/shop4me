@@ -26,12 +26,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->bind_result($driver_id,$full_name,$id,$phone,$vehicle_type,$plate,$date_joined,$location,$approved);
 	
 	$products['drivers'] = array(); 
-	$response = array();
+	$temp = array();
+		
 	
 	//traversing through all the result 
 	if($stmt->fetch()>0){
-
-		$temp = array();
 		
 		$temp['driver_id'] = $driver_id;
 		$temp['full_name'] = $full_name;
@@ -42,21 +41,19 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['date_joined'] = $date_joined;
 		$temp['location'] = $location;
 		$temp['approved'] = $approved;
-        $temp["status"] = "0";
-        $temp["message"] = "there..!";
+		$temp["status"] = "0";
+       		$temp["message"] = "there..!";       
 
 		array_push($products['drivers'], $temp);
-	
-	//displaying the result in json format 
-    	echo json_encode($products);
+    		echo json_encode($products);
 	
 	}else {
-        // failed to insert row
-        $response["status"] = "1";
-        $response["message"] = "Not there..!";
-    // echoing JSON response
-        echo json_encode($response);
-    }
+		$temp["status"] = "1";
+       		$temp["message"] = "not there..!";   
+		
+		array_push($products['drivers'], $temp);
+      		echo json_encode($products);
+	}
   
   
 }
