@@ -4,6 +4,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	require_once('dbConnect.php');
 	
 	$driver_id = $_POST['driver_id'];
+	$status_approved = $_POST['status_approved'];
 	
 	//$conn = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 	
@@ -16,7 +17,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM drivers WHERE driver_id = '$driver_id' AND approved = 'approved';");
+	$stmt = $conn->prepare("SELECT * FROM drivers WHERE driver_id = '$driver_id';");
 	
 	//executing the query 
 	$stmt->execute();
