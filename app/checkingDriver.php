@@ -4,7 +4,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	require_once('dbConnect.php');
 	
 	$driver_id = $_POST['driver_id'];
-	$status_approved = $_POST['status_approved'];
 	
 	//$conn = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 	
