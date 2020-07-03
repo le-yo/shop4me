@@ -18,11 +18,11 @@
 		$insurance = $_REQUEST['insurance'];
 		$ntsa = $_REQUEST['ntsa'];
 
-        $adding = "INSERT INTO driver_doc (driver_id,id,photo,dl,badge_dl,insurance) VALUES ('$driver_id','$id','$photo','$dl','$badge_dl','$insurance','$ntsa')";
+        $adding = "INSERT INTO driver_doc (driver_id,id,photo,dl,badge_dl,insurance,ntsa) VALUES ('$driver_id','$id','$photo','$dl','$badge_dl','$insurance','$ntsa')";
 
 
 
-        $updating = "UPDATE driver_doc SET id = '$id',photo = '$photo',dl = '$dl',badge_dl = '$badge_dl',insurance = '$insurance' WHERE driver_id = '$driver_id'";
+        $updating = "UPDATE driver_doc SET id = '$id',photo = '$photo',dl = '$dl',badge_dl = '$badge_dl',insurance = '$insurance' ,ntsa = '$ntsa' WHERE driver_id = '$driver_id'";
        
        $result_update = mysqli_query($conn,$updating);
        
