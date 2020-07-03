@@ -19,12 +19,6 @@
 		$ntsa = $_REQUEST['ntsa'];
 
         $adding = "INSERT INTO driver_doc (driver_id,id,photo,dl,badge_dl,insurance,ntsa) VALUES ('$driver_id','$id','$photo','$dl','$badge_dl','$insurance','$ntsa')";
-
-
-
-        $updating = "UPDATE driver_doc SET id = '$id',photo = '$photo',dl = '$dl',badge_dl = '$badge_dl',insurance = '$insurance' ,ntsa = '$ntsa' WHERE driver_id = '$driver_id'";
-       
-       $result_update = mysqli_query($conn,$updating);
        
        $result = mysqli_query($conn,$adding);
         
@@ -33,17 +27,9 @@
         $response["status"] = "0";
         $response["message"] = "Successfuly saved.";
     } else {
-
-//updating        
-    if ($result_update) {
-        // successfully inserted into database
-        $response["status"] = "0";
-        $response["message"] = "Saved.";
-    } else {
         // failed to insert row
         $response["status"] = "1";
         $response["message"] = "Error: ".mysqli_error($con);
-    }
 
     }
     // echoing JSON response
