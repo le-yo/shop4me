@@ -6,7 +6,8 @@
     
     if(isset($_REQUEST['driver_id']) && isset($_REQUEST['id']) 
     && isset($_REQUEST['photo']) && isset($_REQUEST['dl'])
-    && isset($_REQUEST['badge_dl']) && isset($_REQUEST['insurance'])){
+    && isset($_REQUEST['badge_dl']) && isset($_REQUEST['insurance'])
+      && isset($_REQUEST['ntsa'])){
         
         	//Getting post data 
 		$driver_id = $_REQUEST['driver_id'];
@@ -15,8 +16,9 @@
 		$dl = $_REQUEST['dl'];
 		$badge_dl = $_REQUEST['badge_dl'];
 		$insurance = $_REQUEST['insurance'];
+		$ntsa = $_REQUEST['ntsa'];
 
-        $adding = "INSERT INTO driver_doc (driver_id,id,photo,dl,badge_dl,insurance) VALUES ('$driver_id','$id','$photo','$dl','$badge_dl','$insurance')";
+        $adding = "INSERT INTO driver_doc (driver_id,id,photo,dl,badge_dl,insurance) VALUES ('$driver_id','$id','$photo','$dl','$badge_dl','$insurance','$ntsa')";
 
 
 
