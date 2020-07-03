@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	}
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM driver_doc WHERE driver_id = '$driver_id' ORDER BY dateCreated DESC;");
+	$stmt = $conn->prepare("SELECT * FROM driver_doc WHERE driver_id = '$driver_id';");
 	
 	//executing the query 
 	$stmt->execute();
