@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($driver_id,$id,$photo,$dl,$badge_dl,$insurance);
+	$stmt->bind_result($driver_id,$id,$photo,$dl,$badge_dl,$insurance,$ntsa);
 	
 	$products['docs'] = array(); 
 	$temp = array();
@@ -35,6 +35,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['dl'] = $dl;
 		$temp['badge_dl'] = $badge_dl;
 		$temp['insurance'] = $insurance;
+		$temp['ntsa'] = $ntsa;
 		$temp["status"] = "0";
        		$temp["message"] = "there..!";       
 
