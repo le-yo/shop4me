@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($id,$name,$image,$dateCreated,$location,$category,$email,$phone,$city,$user_id,$till,$status,$open);
+	$stmt->bind_result($id,$name,$image,$dateCreated,$location,$category,$email,$phone,$city,$user_id,$till,$status,$open,$account_no);
 	
 	$products['shops'] = array(); 
 	
@@ -41,6 +41,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['category'] = $category;
 		$temp['status'] = $status;
 		$temp['till'] = $till;
+		$temp['account_no'] = $account_no;
 		$temp['open'] = $open;
 
 		array_push($products['shops'], $temp);
