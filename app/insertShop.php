@@ -3,13 +3,15 @@
     require_once('dbConnect.php');
     
     $response = array(); 
+$account_no
     
     if(isset($_REQUEST['id']) && isset($_REQUEST['image']) 
     && isset($_REQUEST['category']) && isset($_REQUEST['dateCreated'])
     && isset($_REQUEST['name']) && isset($_REQUEST['location'])
     && isset($_REQUEST['email']) && isset($_REQUEST['phone'])
     && isset($_REQUEST['user_id']) && isset($_REQUEST['city'])
-    && isset($_REQUEST['till']) && isset($_REQUEST['status'])){
+    && isset($_REQUEST['till']) && isset($_REQUEST['status'])
+    && isset($_REQUEST['account_no'])){
         
         	//Getting post data 
 		$id = $_REQUEST['id'];
@@ -25,8 +27,9 @@
 		$till = $_REQUEST['till'];
 		$status = $_REQUEST['status'];
 		$open = $_REQUEST['open'];
+		$account_no = $_REQUEST['account_no'];
 
-        $adding = "INSERT INTO shops (id,name,image,dateCreated,location,category,email,phone,city,user_id,till,status,open) VALUES ('$id','$name','$image','$dateCreated','$location','$category','$email','$phone','$city','$user_id','$till','$status','$open')";
+        $adding = "INSERT INTO shops (id,name,image,dateCreated,location,category,email,phone,city,user_id,till,status,open,account_no) VALUES ('$id','$name','$image','$dateCreated','$location','$category','$email','$phone','$city','$user_id','$till','$status','$open','$account_no')";
        
        $result = mysqli_query($conn,$adding);
         
