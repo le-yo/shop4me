@@ -12,7 +12,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM drivers WHERE approved = 'approved' ORDER BY full_name DESC;");
+	$stmt = $conn->prepare("SELECT * FROM drivers WHERE approved = 'true' ORDER BY full_name DESC;");
 	
 	//executing the query 
 	$stmt->execute();
