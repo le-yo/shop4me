@@ -1,8 +1,12 @@
 <?php
-   if($_SERVER['REQUEST_METHOD']=='POST'){
+  
     require_once('dbConnect.php');
     
     $response = array(); 
+
+ if(isset($_REQUEST['driver_id']) 
+&& isset($_REQUEST['something_to_update'])
+&& isset($_REQUEST['val'])){
         
         	//Getting post data 
 		$driver_id = $_REQUEST['driver_id'];
