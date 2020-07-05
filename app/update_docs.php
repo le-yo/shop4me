@@ -4,18 +4,15 @@
     
     $response = array(); 
 
- if(isset($_REQUEST['driver_id']) 
-&& isset($_REQUEST['something_to_update'])
-&& isset($_REQUEST['val'])){
+ if(isset($_REQUEST['driver_id']) && isset($_REQUEST['id'])){
         
         	//Getting post data 
 		$driver_id = $_REQUEST['driver_id'];
-		$something_to_update = $_REQUEST['something_to_update'];
-		$val = $_REQUEST['val'];
+		$id = $_REQUEST['id'];
 
 
 
-        $updating = "UPDATE driver_doc SET '$something_to_update' = '$val' WHERE driver_id = '$driver_id'";
+        $updating = "UPDATE driver_doc SET id = '$id' WHERE driver_id = '$driver_id'";
        
        $result_update = mysqli_query($conn,$updating);
 
