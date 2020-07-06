@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($docRef,$user_id,$order_no,$date,$amount,$delivery_fee,$driver_id,$shipped_status,$delivery_details,$shop_id,$mpesa_code,$deleted);
+	$stmt->bind_result($docRef,$user_id,$order_no,$date,$amount,$delivery_fee,$driver_id,$shipped_status,$delivery_details,$shop_id,$mpesa_code,$deleted,$vehicle_type);
 	
 	$products['orders'] = array(); 
 	
