@@ -5,6 +5,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	$docref = $_POST['docref'];
 	$shipped_status = $_POST['shipped_status'];
+	$vehicle_type = $_POST['vehicle_type'];
 	
 	//$conn = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 	
@@ -17,7 +18,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$deleting = "UPDATE orders SET shipped_status = '$shipped_status' WHERE docref = '$docref'";
+	$deleting = "UPDATE orders SET shipped_status = '$shipped_status', vehicle_type = '$vehicle_type' WHERE docref = '$docref'";
 	
 	
 	$result = mysqli_query($conn,$deleting);
