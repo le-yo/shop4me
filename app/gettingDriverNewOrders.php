@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = 'pending' AND deleted = 'no' AND shipped_status = 'on packaging' AND vehicle_type = '$vehicle_type' ORDER BY date DESC LIMIT 2;");
+	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = 'pending' AND deleted = 'no' AND shipped_status = 'on packaging' WHERE vehicle_type = '$vehicle_type' ORDER BY date DESC LIMIT 2;");
 	
 	//executing the query 
 	$stmt->execute();
