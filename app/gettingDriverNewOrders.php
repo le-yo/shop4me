@@ -1,4 +1,6 @@
 <?php
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	require_once('dbConnect.php');
@@ -9,10 +11,12 @@
 		die();
 	}
 	
+	$vehicle_type = $_POST['vehicle_type'];
+	
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = 'pending' AND deleted = 'no' AND shipped_status = 'on packaging' ORDER BY date DESC LIMIT 2;");
+	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = 'pending' AND deleted = 'no' AND shipped_status = 'on packaging' AND vehicle_type = '$vehicle_type' ORDER BY date DESC LIMIT 2;");
 	
 	//executing the query 
 	$stmt->execute();
@@ -44,4 +48,6 @@
 	
 	//displaying the result in json format 
 	echo json_encode($products);
+	
+}
 ?>
