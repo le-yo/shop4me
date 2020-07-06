@@ -27,7 +27,7 @@
 		$vehicle_type = $_REQUEST['vehicle_type'];
 		$deleted = $_REQUEST['deleted'];
 
-        $adding = "INSERT INTO orders (docRef,user_id,order_no,date,amount,delivery_fee,driver_id,shipped_status,delivery_details,shop_id,mpesa_code,deleted,$vehicle_type) VALUES ('$docRef','$user_id','$order_no','$date','$amount','$delivery_fee','$driver_id','$shipped_status','$delivery_details','$shop_id','$mpesa_code','$deleted','$vehicle_type')";
+        $adding = "INSERT INTO orders (docRef,user_id,order_no,date,amount,delivery_fee,driver_id,shipped_status,delivery_details,shop_id,mpesa_code,deleted,vehicle_type) VALUES ('$docRef','$user_id','$order_no','$date','$amount','$delivery_fee','$driver_id','$shipped_status','$delivery_details','$shop_id','$mpesa_code','$deleted','$vehicle_type')";
        
        $result = mysqli_query($conn,$adding);
         
