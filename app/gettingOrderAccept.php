@@ -40,6 +40,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['shipped_status'] = $shipped_status; 
 		$temp['delivery_details'] = $delivery_details; 
 		$temp['shop_id'] = $shop_id; 
+		$temp['vehicle_type'] = $vehicle_type; 
 
 		array_push($products['orders'], $temp);
 	}
