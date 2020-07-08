@@ -3,7 +3,6 @@
     require_once('dbConnect.php');
     
     $response = array(); 
-$account_no
     
     if(isset($_REQUEST['id']) && isset($_REQUEST['image']) 
     && isset($_REQUEST['category']) && isset($_REQUEST['dateCreated'])
