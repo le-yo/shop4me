@@ -10,12 +10,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	}
 	
 	
-	$driver_id = $_POST['driver_id'];
+	$driver_id = $_POST['driver_id'];	
+	$shipped_status = $_POST['shipped_status'];
 	
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = '$driver_id' AND deleted = 'no' AND shipped_status = 'on delivery' ORDER BY date DESC LIMIT 2;");
+	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = '$driver_id' AND deleted = 'no' AND shipped_status = '$shipped_status' ORDER BY date DESC LIMIT 2;");
 	
 	//executing the query 
 	$stmt->execute();
