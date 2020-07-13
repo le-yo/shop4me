@@ -1,6 +1,7 @@
 <?php
 include 'dbConnect.php' ;
 
+
   header("Content-Type: application/json");
   $stkCallbackResponse = file_get_contents('php://input');
   
