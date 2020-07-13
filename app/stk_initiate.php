@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   
   $strPhone = $_POST['strPhone'];
   $strAmount = $_POST['strAmount'];
-  $strUserId = $_POST['strUserId']; 
+  $strOrderId = $_POST['strOrderId']; 
 
   # access token
   $consumerKey = 'tEU3DAg51BRejzXqUVGBn0AZvmbEs8Eu'; //Fill with your app Consumer Key
@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
   # callback url
-  $CallBackURL = 'https://laxcoinc.000webhostapp.com/laxco/ShopForMeDb/callback_url.php'; 
+  $CallBackURL = 'https://shop4Me.yangu.me/callback_url.php'; 
 
   $curl = curl_init($access_token_url);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     'PartyB' => $BusinessShortCode,
     'PhoneNumber' => $strPhone,
     'CallBackURL' => $CallBackURL,
-    'AccountReference' => $strPhone,
+    'AccountReference' => $strOrderId,
     'TransactionDesc' => $TransactionDesc
   );
   
