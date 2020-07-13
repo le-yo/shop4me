@@ -1,5 +1,5 @@
 <?php
-include 'conn.php' ;
+include 'dbConnect.php' ;
 
   $conn =new mysqli($HostName,$HostUser,$HostPass,$DatabaseName);
   header("Content-Type: application/json");
