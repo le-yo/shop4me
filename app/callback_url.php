@@ -1,5 +1,6 @@
 <?php
 include 'conn.php' ;
+
   $conn =new mysqli($HostName,$HostUser,$HostPass,$DatabaseName);
   header("Content-Type: application/json");
   $stkCallbackResponse = file_get_contents('php://input');
@@ -8,6 +9,8 @@ include 'conn.php' ;
   $log = fopen($logFile, "a");
   fwrite($log, $stkCallbackResponse);
   fclose($log);
+
+  $AccountReference = $_GET['strOrderId'];
  
      $jsonMpesaResponse = json_decode($stkCallbackResponse, true);
      $KILI = json_encode($jsonMpesaResponse);
@@ -21,7 +24,7 @@ include 'conn.php' ;
          //$CallbackMetadata=$jsonMpesaResponse["Body"]["stkCallback"]["CallbackMetadata"]["Item"];
 	    
 	    $Amount=$jsonMpesaResponse["Body"]["stkCallback"]["CallbackMetadata"]["Item"][0]["Value"];
-	    $ReceiptNumber=$jsonMpesaResponse["Body"]["stkCallback"]["CallbackMetadata"]["Item"][1]["Value"];
+	    $ReceiptNumber=$jsonMpesaResponse["Body"]["stkCallback"]["CallbackMetadata"]["Item"]["stk_initiate"][1]["Value"];
 	    $TransactionDate=$jsonMpesaResponse["Body"]["stkCallback"]["CallbackMetadata"]["Item"][3]["Value"];
 	    $PhoneNumber=$jsonMpesaResponse["Body"]["stkCallback"]["CallbackMetadata"]["Item"][4]["Value"];
 
@@ -39,7 +42,7 @@ include 'conn.php' ;
 
    if($ResultCode===0){  
 	
-	   $query = "INSERT INTO  mpesa_account   ( PhoneNumber )   VALUES($MerchantRequestID )";
+	   $query = "INSERT INTO mpesa_account (strOrderId) VALUES ('$AccountReference')";
 	   $query = mysqli_query($conn, $query);
 }
 else
