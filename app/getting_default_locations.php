@@ -32,10 +32,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['user_id'] = $user_id; 
 		$temp['home'] = $home;
 		$temp['work_like'] = $work_place;
-		$temp['gym'] = $gym;  
+		$temp['gym'] = $gym; 
+		$temp["status"] = "0";
 
 		array_push($products['default_locations'], $temp);
-	}
+	}else
 	
 	//displaying the result in json format 
 	echo json_encode($products);
