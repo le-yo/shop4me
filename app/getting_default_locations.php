@@ -25,8 +25,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$products['default_locations']= array(); 
 	
 	//traversing through all the result 
-	while($stmt->fetch()){
-
+	if($stmt->fetch()>0){
+		
 		$temp = array();
 		
 		$temp['user_id'] = $user_id; 
@@ -34,9 +34,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['work_like'] = $work_place;
 		$temp['gym'] = $gym; 
 		$temp["status"] = "0";
-
+		
 		array_push($products['default_locations'], $temp);
-	}else
+	}else{
+		$temp["status"] = "1";
+		
+		array_push($products['default_locations'], $temp);
+	}
 	
 	//displaying the result in json format 
 	echo json_encode($products);
