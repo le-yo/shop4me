@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		
 		$temp['user_id'] = $user_id; 
 		$temp['home'] = $home;
-		$temp['work_like'] = $work_place;
+		$temp['work_place'] = $work_place;
 		$temp['gym'] = $gym; 
 		$temp["status"] = "0";
 		
