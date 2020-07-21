@@ -13,7 +13,7 @@
 
 
 
-        $updating = "UPDATE default_locations SET $something_to_update = '$val' WHERE user_id = '$user_id'";
+        $updating = "UPDATE default_locations SET ".$something_to_update." = '$val' WHERE user_id = '$user_id'";
        
         $result_update = mysqli_query($conn,$updating);
 
