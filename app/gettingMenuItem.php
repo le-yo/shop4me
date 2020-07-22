@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($id,$image,$menuitem,$shop_id,$price,$food_cat,$dateCreated,$type);
+	$stmt->bind_result($no, $id,$image,$menuitem,$shop_id,$price,$food_cat,$dateCreated,$type);
 	
 	$products['menus'] = array(); 
 	
@@ -30,7 +30,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 		$temp = array();
 		
-		$temp['id'] = $id; 
+		$temp['no'] = $no;
+		$temp['id'] = $id;
 		$temp['image'] = $image; 
 		$temp['food_cat'] = $food_cat; 
 		$temp['dateCreated'] = $dateCreated; 
