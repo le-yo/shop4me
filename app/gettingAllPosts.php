@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	while($stmt->fetch()){
 
 		$temp = array();
-		$temp['id'] = $title; 
+		$temp['id'] = $id; 
 		$temp['title'] = $title; 
 		$temp['price'] = $price; 
 		$temp['descr'] = $descr; 
