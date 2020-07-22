@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		
 		$temp['title'] = $title; 
 		$temp['price'] = $price; 
-		$temp['id'] = $price; 
+		$temp['id'] = $id; 
 		$temp['descr'] = $descr; 
 		$temp['dateCreated'] = $dateCreated; 
 		$temp['imageUrl'] = $imageUrl; 
