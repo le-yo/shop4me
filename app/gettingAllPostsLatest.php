@@ -16,13 +16,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM posts WHERE shop_id = '$shop_id' AND qty > '0' AND qty != 'NULL' ORDER BY dateCreated DESC LIMIT 6;");
+	$stmt = $conn->prepare("SELECT * FROM posts WHERE shop_id = '$shop_id' AND qty > '0' AND qty != 'NULL' ORDER BY id DESC LIMIT 6;");
 	
 	//executing the query 
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($title, $price, $descr, $dateCreated, $imageUrl,$documentId,$category,$size,$brand,$prev_price,$user_id,$shop_id,$qty);
+	$stmt->bind_result($id, $title, $price, $descr, $dateCreated, $imageUrl,$documentId,$category,$size,$brand,$prev_price,$user_id,$shop_id,$qty);
 	
 	$products['posts'] = array(); 
 	
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	while($stmt->fetch()){
 
 		$temp = array();
-		
+		$temp['id'] = $title;
 		$temp['title'] = $title; 
 		$temp['price'] = $price; 
 		$temp['descr'] = $descr; 
