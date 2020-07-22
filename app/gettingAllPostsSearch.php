@@ -26,7 +26,7 @@
 
 		$temp = array();
 		
-		$temp['id'] = $title;
+		$temp['id'] = $id; 
 		$temp['title'] = $title; 
 		$temp['price'] = $price; 
 		$temp['descr'] = $descr; 
