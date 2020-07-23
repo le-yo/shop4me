@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM orders WHERE shop_id = '$shop_id' AND shipped_status = 'on packaging' AND deleted = 'no' ORDER BY date DESC;");
+	$stmt = $conn->prepare("SELECT * FROM orders WHERE shop_id = '$shop_id' AND shipped_status = 'on packaging' AND deleted = 'no' ORDER BY id DESC;");
 	
 	//executing the query 
 	$stmt->execute();
@@ -29,6 +29,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 		$temp = array();
 		
+		$temp['id'] = $id; 
 		$temp['docRef'] = $docRef; 
 		$temp['user_id'] = $user_id; 
 		$temp['order_no'] = $order_no; 
