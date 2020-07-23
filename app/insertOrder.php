@@ -10,7 +10,7 @@
     && isset($_REQUEST['driver_id']) && isset($_REQUEST['shipped_status']) 
     && isset($_REQUEST['delivery_details']) && isset($_REQUEST['shop_id'])
     && isset($_REQUEST['mpesa_code']) && isset($_REQUEST['deleted'])
-    && isset($_REQUEST['vehicle_type'])){
+    && isset($_REQUEST['vehicle_type']) && isset($_REQUEST['latlng'])){
         
         	//Getting post data 
 		$docRef = $_REQUEST['docRef'];
@@ -26,8 +26,9 @@
 		$shop_id = $_REQUEST['shop_id'];
 		$vehicle_type = $_REQUEST['vehicle_type'];
 		$deleted = $_REQUEST['deleted'];
+		$latlng = $_REQUEST['latlng'];
 
-        $adding = "INSERT INTO orders (docRef,user_id,order_no,date,amount,delivery_fee,driver_id,shipped_status,delivery_details,shop_id,mpesa_code,deleted,vehicle_type) VALUES ('$docRef','$user_id','$order_no','$date','$amount','$delivery_fee','$driver_id','$shipped_status','$delivery_details','$shop_id','$mpesa_code','$deleted','$vehicle_type')";
+        $adding = "INSERT INTO orders (docRef,user_id,order_no,date,amount,delivery_fee,driver_id,shipped_status,delivery_details,shop_id,mpesa_code,deleted,vehicle_type,latlng) VALUES ('$docRef','$user_id','$order_no','$date','$amount','$delivery_fee','$driver_id','$shipped_status','$delivery_details','$shop_id','$mpesa_code','$deleted','$vehicle_type','$latlng')";
        
        $result = mysqli_query($conn,$adding);
         
