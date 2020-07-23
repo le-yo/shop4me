@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM menu_items WHERE shop_id = '$shop_id' And food_cat = '$food_cat'");
+	$stmt = $conn->prepare("SELECT * FROM menu_items WHERE shop_id = '$shop_id' And food_cat = '$food_cat' ORDER BY no DESC");
 	
 	//executing the query 
 	$stmt->execute();
