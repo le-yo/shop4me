@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM orders WHERE date RLIKE '$date' AND deleted = 'no' ORDER BY date DESC;");
+	$stmt = $conn->prepare("SELECT * FROM orders WHERE date RLIKE '$date' AND deleted = 'no' ORDER BY id DESC;");
 	
 	//executing the query 
 	$stmt->execute();
