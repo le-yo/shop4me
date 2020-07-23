@@ -16,13 +16,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = 'pending' AND deleted = 'no' AND shipped_status = 'on packaging' AND vehicle_type = '$vehicle_type' ORDER BY date DESC;");
+	$stmt = $conn->prepare("SELECT * FROM orders WHERE driver_id = 'pending' AND deleted = 'no' AND shipped_status = 'on packaging' AND vehicle_type = '$vehicle_type' ORDER BY id DESC;");
 	
 	//executing the query 
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($docRef,$user_id,$order_no,$date,$amount,$delivery_fee,$driver_id,$shipped_status,$delivery_details,$shop_id,$mpesa_code,$deleted,$vehicle_type);
+	$stmt->bind_result($id, $docRef,$user_id,$order_no,$date,$amount,$delivery_fee,$driver_id,$shipped_status,$delivery_details,$shop_id,$mpesa_code,$deleted,$vehicle_type);
 	
 	$products['orders'] = array(); 
 	
@@ -31,6 +31,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 		$temp = array();
 		
+		$temp['id'] = $id; 
 		$temp['docRef'] = $docRef; 
 		$temp['user_id'] = $user_id; 
 		$temp['order_no'] = $order_no; 
