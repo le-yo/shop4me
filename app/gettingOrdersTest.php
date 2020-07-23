@@ -17,7 +17,7 @@
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($docRef,$user_id,$order_no,$date,$amount,$delivery_fee,$driver_id,$shipped_status,$delivery_details,$shop_id);
+	$stmt->bind_result($id, $docRef,$user_id,$order_no,$date,$amount,$delivery_fee,$driver_id,$shipped_status,$delivery_details,$shop_id);
 	
 	$products['orders'] = array(); 
 	
@@ -26,7 +26,8 @@
 
 		$temp = array();
 		
-		$temp['id'] = $docRef; 
+		$temp['id'] = $id; 
+		$temp['docRef'] = $docRef; 
 		$temp['user_id'] = $user_id; 
 		$temp['order_no'] = $order_no; 
 		$temp['date'] = $date; 
