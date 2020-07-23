@@ -17,7 +17,7 @@
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($title, $price, $descr, $dateCreated, $imageUrl,$documentId,$category,$size,$brand,$prev_price,$user_id,$shop_id,$qty);
+	$stmt->bind_result($id, $title, $price, $descr, $dateCreated, $imageUrl,$documentId,$category,$size,$brand,$prev_price,$user_id,$shop_id,$qty);
 	
 	$products['posts'] = array(); 
 	
@@ -26,6 +26,7 @@
 
 		$temp = array();
 		
+		$temp['id'] = $id; 
 		$temp['title'] = $title; 
 		$temp['price'] = $price; 
 		$temp['descr'] = $descr; 
