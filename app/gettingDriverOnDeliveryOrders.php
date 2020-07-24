@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($id, $docRef,$user_id,$order_no,$date,$amount,$delivery_fee,$driver_id,$shipped_status,$delivery_details,$shop_id,$mpesa_code,$deleted,$vehicle_type);
+	$stmt->bind_result($id, $docRef,$user_id,$order_no,$date,$amount,$delivery_fee,$driver_id,$shipped_status,$delivery_details,$shop_id,$mpesa_code,$deleted,$vehicle_type,$latlng);
 	
 	$products['orders'] = array(); 
 	
@@ -44,6 +44,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['delivery_details'] = $delivery_details; 
 		$temp['shop_id'] = $shop_id; 
 		$temp['vehicle_type'] = $vehicle_type; 
+		$temp['latlng'] = $latlng;
 
 		array_push($products['orders'], $temp);
 	}
