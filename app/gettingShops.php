@@ -4,6 +4,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	require_once('dbConnect.php');
 	
 	$category= $_POST['category'];
+	$city = $_POST['city'];
 	
 	//Checking if any error occured while connecting
 	if (mysqli_connect_errno()) {
@@ -14,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM shops WHERE category = '$category' AND status = 'active' ORDER BY dateCreated DESC;");
+	$stmt = $conn->prepare("SELECT * FROM shops WHERE category = '$category' AND status = 'active' AND city = '$city' ORDER BY dateCreated DESC;");
 	
 	//executing the query 
 	$stmt->execute();
