@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM shops WHERE category = '$category' AND status = 'active'  ORDER BY dateCreated DESC;");
+	$stmt = $conn->prepare("SELECT * FROM shops WHERE city = '$city' AND category = '$category' AND status = 'active'  ORDER BY dateCreated DESC;");
 	
 	//executing the query 
 	$stmt->execute();
