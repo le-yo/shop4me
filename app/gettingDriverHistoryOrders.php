@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['shipped_status'] = $shipped_status; 
 		$temp['delivery_details'] = $delivery_details; 
 		$temp['shop_id'] = $shop_id; 
-		$temp['latlng'] = $latlng
+		$temp['latlng'] = $latlng;
 
 		array_push($products['orders'], $temp);
 	}
