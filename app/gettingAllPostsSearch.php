@@ -11,7 +11,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM posts ORDER BY id ASC LIMIT 1000;");
+	$stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC;");
 	
 	//executing the query 
 	$stmt->execute();
