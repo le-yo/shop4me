@@ -28,7 +28,7 @@
 		$temp = array();
 		
 		$temp['id'] = $id; 
-		$temp['strName'] = $strNameid;
+		$temp['strName'] = $strName;
 		$temp['strQty'] = $strQty;
 		$temp['strSize'] = $strSize;  
 		$temp['strImageUrl'] = $strImageUrl;  
