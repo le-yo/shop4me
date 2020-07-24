@@ -11,7 +11,7 @@
 	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM posts WHERE qty > '0' AND qty != 'NULL' ORDER BY RAND() DESC LIMIT 8;");
+	$stmt = $conn->prepare("SELECT * FROM posts WHERE qty > '0' AND qty != 'NULL' ORDER BY RAND() DESC LIMIT 4;");
 	
 	//executing the query 
 	$stmt->execute();
