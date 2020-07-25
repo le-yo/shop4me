@@ -14,7 +14,7 @@
 	//SELECT * FROM table ORDER BY ID LIMIT n-1,1
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM ads ORDER BY id LIMIT 3-1,2;");
+	$stmt = $conn->prepare("SELECT * FROM ads ORDER BY id");
 	
 	//executing the query 
 	$stmt->execute();
