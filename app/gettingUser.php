@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($strUserId,$strUsername,$strEmail,$strPhone,$strCounty,$strLocation,$strCity,$strImageUrl);
+	$stmt->bind_result($strUserId,$strUsername,$strEmail,$strPhone,$strCounty,$strLocation,$strCity,$strPassword,$strRole,$strImageUrl);
 	
 	$products['users'] = array(); 
 	$response = array();
@@ -38,6 +38,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['strLocation'] = $strLocation;
 		$temp['strCity'] = $strCity;
 		$temp['strImageUrl'] = $strImageUrl;
+		$temp['strPassword'] = $strPassword;
+		$temp['strRole'] = $strRole;
         $temp["status"] = "0";
         $temp["message"] = "there..!";
 
