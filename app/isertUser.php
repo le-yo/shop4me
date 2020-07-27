@@ -1,13 +1,15 @@
 <?php
    
     require_once('dbConnect.php');
+
     
     $response = array(); 
     
     if(isset($_REQUEST['strUserId']) && isset($_REQUEST['strUsername']) 
     && isset($_REQUEST['strEmail']) && isset($_REQUEST['strPhone'])
     && isset($_REQUEST['strCounty']) && isset($_REQUEST['strLocation'])
-    && isset($_REQUEST['strCity']) && isset($_REQUEST['strImageUrl'])){
+    && isset($_REQUEST['strCity']) && isset($_REQUEST['strImageUrl'])
+      && isset($_REQUEST['strPassword']) && isset($_REQUEST['strRole'])){
         
         	//Getting post data 
 		$strUserId = $_REQUEST['strUserId'];
@@ -18,8 +20,10 @@
 		$strLocation = $_REQUEST['strLocation'];
 		$strCity = $_REQUEST['strCity'];
 		$strImageUrl = $_REQUEST['strImageUrl'];
+		$strRole = $_REQUEST['strRole'];
+		$strPassword = $_REQUEST['strPassword'];
 
-        $adding = "INSERT INTO users (strUserId,strUsername,strEmail,strPhone,strCounty,strLocation,strCity,strImageUrl) VALUES ('$strUserId','$strUsername','$strEmail','$strPhone','$strCounty','$strLocation','$strCity','$strImageUrl')";
+        $adding = "INSERT INTO users (strUserId,strUsername,strEmail,strPhone,strCounty,strLocation,strCity,strPassword,strRole,strImageUrl) VALUES ('$strUserId','$strUsername','$strEmail','$strPhone','$strCounty','$strLocation','$strCity','$strPassword','$strRole','$strImageUrl')";
        
        $result = mysqli_query($conn,$adding);
         
