@@ -33,7 +33,7 @@
    
    //checking if transaction was successful
    if($ResultCode == 0){  	
-	$query = "INSERT INTO mpesa_account (strOrderId,strPhone,strAmount) VALUES ('$AccountReference','$PhoneNumber','$Amount')";
+	$adding = "INSERT INTO mpesa_account (strOrderId,strPhone,strAmount) VALUES ('$AccountReference','$PhoneNumber','$Amount')";
 	$result = mysqli_query($conn,$adding);//inserting transaction to db after a=successul transaction
 	   
 	$response["status"] = "0";
