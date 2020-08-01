@@ -42,7 +42,7 @@
    }else {
 	   
 	//the transaction was not successfull...
-	$response["status"] = "0";
+	$response["status"] = "1";
         $response["message"] = "Successfuly sents.";
    }
  
