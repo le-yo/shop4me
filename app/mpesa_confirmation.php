@@ -11,9 +11,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		die();
 	}
 	
-	id	strOrderId	strPhone	strAmount
-
-	
 	//creating a query
 	$stmt = $conn->prepare("SELECT * FROM mpesa_account WHERE strOrderId = '$strOrderId';");
 	
