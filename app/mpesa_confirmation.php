@@ -24,9 +24,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$stmt->bind_result($id,$strOrderId,$strPhone,$strAmount);
 	
 	$products['mpesa'] = array(); 
+	$response = array();
 	
 	//traversing through all the result 
-	while($stmt->fetch()){
+	if($stmt->fetch()>0){
 
 		$temp = array();
 		
@@ -34,12 +35,21 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['strOrderId'] = $strOrderId; 
 		$temp['strPhone'] = $strPhone; 
 		$temp['strAmount'] = $v; 
+		$temp['status'] = "0"; 
+                $temp["message"] = "there..!";
 
 		array_push($products['mpesa'], $temp);
-	}
 	
 	//displaying the result in json format 
-	echo json_encode($products);
+	echo json_encode($products); 
+		
+	}else {
+        // failed to insert row
+        $response["status"] = "1";
+        $response["message"] = "Not there..!";
+    // echoing JSON response
+        echo json_encode($response);
+    }
 	
 }
 ?>
