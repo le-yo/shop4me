@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     'PartyB' => $BusinessShortCode,
     'PhoneNumber' => $strPhone,
     'CallBackURL' => $CallBackURL,
-    'AccountReference' => $strOrderId,
+    'AccountReference' => $strPhone,
     'TransactionDesc' => $TransactionDesc
   );
 
