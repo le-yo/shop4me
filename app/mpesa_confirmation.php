@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['id'] = $id; 
 		$temp['strOrderId'] = $strOrderId; 
 		$temp['strPhone'] = $strPhone; 
-		$temp['strAmount'] = $v; 
+		$temp['strAmount'] = $strAmount; 
 		$temp['status'] = "0"; 
                 $temp["message"] = "there..!";
 
