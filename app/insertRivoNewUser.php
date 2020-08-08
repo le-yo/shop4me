@@ -5,7 +5,7 @@
     $response = array(); 
     
     if(isset($_REQUEST['strUserId']) && isset($_REQUEST['strUsername']) 
-    && isset($_REQUEST['strPhone']) && isset($_REQUEST['strImageUrl']){
+    && isset($_REQUEST['strPhone']) && isset($_REQUEST['strImageUrl'])){
         
         	//Getting post data 
 		$strUserId = $_REQUEST['strUserId'];
