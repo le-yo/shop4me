@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$strUserId = $_POST['strUserId'];	
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM rivo_places WHERE strUserId = '$strUserId';");
+	$stmt = $conn->prepare("SELECT * FROM rivo_places WHERE strUserId = '$strUserId' ORDER BY id DESC LIMIT 2;");
 	
 	//executing the query 
 	$stmt->execute();
