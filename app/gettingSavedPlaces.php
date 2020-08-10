@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		die();
 	}
 	//creating a query
-	$stmt = $conn->prepare("SELECT * FROM rivo_places WHERE strUserId = '$strUserId' ORDER by id ASC");
+	$stmt = $conn->prepare("SELECT * FROM rivo_places WHERE strUserId = '$strUserId' ORDER by id ASC LIMIT 2");
 	
 	//executing the query 
 	$stmt->execute();
