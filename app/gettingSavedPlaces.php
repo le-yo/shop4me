@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$places['places'] = array(); 
 	
 	//traversing through all the result 
-	if($stmt->fetch()>0){
+	if($stmt->fetch()){
 
 		$temp = array();
 		
@@ -33,10 +33,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['strLatLng'] = $strLatLng;
 
 		array_push($places['places'], $temp);
-
-    	        echo json_encode($places);
 	
 	}
+	echo json_encode($places);
 	
 }
 ?>
