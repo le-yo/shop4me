@@ -5,6 +5,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	$strUserId = $_POST['strUserId'];	
 	
+	
+	//Checking if any error occured while connecting
+	if (mysqli_connect_errno()) {
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		die();
+	}
 	//creating a query
 	$stmt = $conn->prepare("SELECT * FROM rivo_places WHERE strUserId = '$strUserId' ORDER BY id DESC LIMIT 2;");
 	
@@ -14,8 +20,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	//binding results to the query 
 	$stmt->bind_result($id,$strUserId,$strName,$strAdress,$strLatLng);
 	
-	$products['places'] = array(); 
-	$response = array();
+	$places['places'] = array(); 
 	
 	//traversing through all the result 
 	if($stmt->fetch()>0){
@@ -26,20 +31,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$temp['strName'] = $strName;
 		$temp['strAdress'] = $strAdress;
 		$temp['strLatLng'] = $strLatLng;
-                $temp["status"] = "0";
-                $temp["message"] = "there..!";
 
-		array_push($products['places'], $temp);
+		array_push($places['places'], $temp);
 
-    	         echo json_encode($products);
+    	        echo json_encode($places);
 	
-	}else {
-        // failed to insert row
-        $response["status"] = "1";
-        $response["message"] = "Not there..!";
-    // echoing JSON response
-        echo json_encode($response);
-    }
+	}
 	
 }
-	?>
+?>
