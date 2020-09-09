@@ -20,8 +20,8 @@ $row = mysqli_fetch_assoc($query);
 $sum = $row['sum'];
 if($query)
 {
-   $data[]['TotalIncome'] = $sum;
-   $result = array("transactions" => $data);
+   $data[]['sum'] = $sum;
+   $result = array("c_ratings" => $data);
    echo json_encode($result);
 }
 myslqi_close($con);
