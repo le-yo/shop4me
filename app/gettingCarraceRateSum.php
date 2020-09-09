@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
 		die();
 	}
 
-$sql = "SELECT SUM(strRate) FROM c_ratings WHERE strPostId = '$strPostId';SUM(strRate)";
+$sql = "SELECT SUM(strRate) FROM c_ratings WHERE strPostId = '$strPostId'";
 $result = $conn->query($sql);
 $rows = array();
     while($temp = mysqli_fetch_assoc($result)) {
