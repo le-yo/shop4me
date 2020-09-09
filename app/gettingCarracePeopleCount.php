@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
 		die();
 	}
 
-$sql = "SELECT COUNT(*) FROM c_ratings WHERE strPostId = '237A3708X19573HG';";
+$sql = "SELECT COUNT(*) FROM c_ratings WHERE strPostId = '260C9840O61078BK';";
 $result = $conn->query($sql);
 $rows = array();
     while($temp = mysqli_fetch_assoc($result)) {
