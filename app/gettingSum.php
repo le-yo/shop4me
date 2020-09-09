@@ -18,8 +18,12 @@ if (mysqli_connect_errno()) {
 $query = mysqli_query($con, "SELECT *, SUM(strRate) AS 'sum' ROM c_ratings;");
 $row = mysqli_fetch_assoc($query);
 $sum = $row['sum'];
-	
-	
-    echo json_encode($sum);
+if($query)
+{
+   $data[]['TotalIncome'] = $sum;
+   $result = array("transactions" => $data);
+   echo json_encode($result);
+}
+myslqi_close($con);
 
 ?>
