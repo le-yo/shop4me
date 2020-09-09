@@ -16,11 +16,34 @@ if (mysqli_connect_errno()) {
 //     while($temp = mysqli_fetch_assoc($result)) {
 //         $rows[] = $temp;
 // }
-$query = mysqli_query($con, "SELECT *, SUM(strRate) AS 'sum' ROM c_ratings WHERE strPostId = '$strPostId';");
-$row = mysqli_fetch_assoc($query);
-$sum = $row['sum'];
 	
+	$stmt = $conn->prepare("SELECT * FROM c_ratings WHERE strPostId = '$strPostId' id DESC");
 	
-    echo json_encode($sum);
+	//executing the query 
+	$stmt->execute();
+	
+	//binding results to the query 
+	$stmt->bind_result($id,$strDocumentId,$strUserId,$strComment,$strDate,$strRate,$strPostId);
+	
+	$products['rates'] = array(); 
+	
+	//traversing through all the result 
+	while($stmt->fetch()){
+
+		$temp = array();
+		
+		$temp['strDocumentId'] = $strDocumentId; 
+		$temp['id'] = $id; 
+		$temp['strUserId'] = $strUserId; 
+		$temp['strComment'] = $strComment; 
+		$temp['strDate'] = $strDate; 
+		$temp['strRate'] = $strRate; 
+		$temp['strPostId'] = $strPostId; 
+
+		array_push($products['rates'], $temp);
+	}
+	
+	//displaying the result in json format 
+	echo json_encode($products);
 }
 ?>
