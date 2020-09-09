@@ -17,7 +17,7 @@ if (mysqli_connect_errno()) {
 //         $rows[] = $temp;
 // }
 	
-	$stmt = $conn->prepare("SELECT * FROM c_ratings WHERE strPostId = '$strPostId' id DESC");
+	$stmt = $conn->prepare("SELECT * FROM c_ratings WHERE strPostId = '$strPostId' ORDER BY id DESC");
 	
 	//executing the query 
 	$stmt->execute();
