@@ -9,21 +9,13 @@ if (mysqli_connect_errno()) {
 		die();
 	}
 
-// $sql = "SELECT*, SUM(strRate) AS 'sum' FROM c_ratings WHERE strPostId = '$strPostId'";
-// $result = $conn->query($sql);
-// $rows = array();
-//     while($temp = mysqli_fetch_assoc($result)) {
-//         $rows[] = $temp;
-// }
-$query = mysqli_query($con, "SELECT *, SUM(strRate) AS 'sum' ROM c_ratings;");
-$row = mysqli_fetch_assoc($query);
-$sum = $row['sum'];
-if($query)
-{
-   $data[]['sum'] = $sum;
-   $result = array("c_ratings" => $data);
-   echo json_encode($result);
+$sql = "SELECT SUM(strRate) FROM c_ratings";
+$result = $conn->query($sql);
+$rows = array();
+    while($temp = mysqli_fetch_assoc($result)) {
+        $rows[] = $temp;
 }
+
 myslqi_close($con);
 
 ?>
