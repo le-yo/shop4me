@@ -1,11 +1,11 @@
 <?php 
 if($_SERVER['REQUEST_METHOD']=='POST'){
 	
-	require_once('dbConnectRe.php');
+	require_once('dbConnect.php');
 	
 	$strType = $_POST['strType'];
 	
-	
+	require_once('dbConnect.php');
 	
 	//Checking if any error occured while connecting
 	if (mysqli_connect_errno()) {

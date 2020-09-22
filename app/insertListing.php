@@ -1,6 +1,6 @@
 <?php
 
-    require_once('dbConnectRe.php');
+    require_once('dbConnect.php');
     
     $response = array(); 
     

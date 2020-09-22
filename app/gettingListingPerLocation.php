@@ -1,7 +1,7 @@
 <?php 
 if($_SERVER['REQUEST_METHOD']=='POST'){
 	
-	require_once('dbConnectRe.php');
+	require_once('dbConnect.php');
 	
 	$strCounty = $_POST['strCounty'];
 	
