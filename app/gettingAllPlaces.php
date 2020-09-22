@@ -1,6 +1,6 @@
 <?php 
 	
-	require_once('dbConnectRe.php');
+	require_once('dbConnect.php');
 	//Checking if any error occured while connecting
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
