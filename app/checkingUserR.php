@@ -2,7 +2,7 @@
 
 // check for required fields
 if($_SERVER['REQUEST_METHOD']=='POST'){
-require_once('dbConnectRe.php');
+require_once('dbConnect.php');
 
 
 // array for JSON response
