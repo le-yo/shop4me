@@ -4,25 +4,18 @@
     
     $response = array(); 
     
-    if(isset($_REQUEST['strDocumentId']) && isset($_REQUEST['strUserId']) 
-    && isset($_REQUEST['strOrderNumber']) && isset($_REQUEST['strDate'])
-    && isset($_REQUEST['strAmount']) && isset($_REQUEST['strDeliveryFee'])
-    && isset($_REQUEST['strDeleted']) && isset($_REQUEST['strShippedStatus']) 
-    && isset($_REQUEST['strMpesaCode']) && isset($_REQUEST['strLatLng'])
-    && isset($_REQUEST['strPaymentMethod'])){
-        
-        	//Getting post data 
-		$strDocumentId = $_REQUEST['strDocumentId'];
-		$strUserId = $_REQUEST['strUserId'];
-		$strOrderNumber = $_REQUEST['strOrderNumber'];
-		$strDate = $_REQUEST['strDate'];
-		$strAmount = $_REQUEST['strAmount'];
-		$strDeliveryFee = $_REQUEST['strDeliveryFee'];
-		$strDeleted = $_REQUEST['strDeleted'];
-		$strShippedStatus = $_REQUEST['strShippedStatus'];
-		$strMpesaCode = $_REQUEST['strMpesaCode'];
-		$strLatLng = $_REQUEST['strLatLng'];
-		$strPaymentMethod = $_REQUEST['strPaymentMethod'];
+    //Getting post data 
+		$strDocumentId = isset($_POST['strDocumentId']) ? $_POST['strDocumentId'] : null;
+		$strUserId = isset($_POST['strUserId']) ? $_POST['strUserId'] : null;
+		$strOrderNumber = isset($_POST['strOrderNumber']) ? $_POST['strOrderNumber'] : null;
+		$strDate = isset($_POST['strDate']) ? $_POST['strDate'] : null;
+		$strAmount = isset($_POST['strAmount']) ? $_POST['strAmount'] : null;
+		$strDeliveryFee =isset($_POST['strDeliveryFee']) ? $_POST['strDeliveryFee'] : null;
+		$strDeleted = isset($_POST['strDeleted']) ? $_POST['strDeleted'] : null;
+		$strShippedStatus = isset($_POST['strShippedStatus']) ? $_POST['strShippedStatus'] : null;
+		$strMpesaCode = isset($_POST['strMpesaCode']) ? $_POST['strMpesaCode'] : null;
+		$strLatLng = isset($_POST['strLatLng']) ? $_POST['strLatLng'] : null;
+		$strPaymentMethod = isset($_POST['strPaymentMethod']) ? $_POST['strPaymentMethod'] : null;
 
         $adding = "INSERT INTO c_orders (strDocumentId,strUserId,strOrderNumber,strDate,strAmount,strDeliveryFee,strDeleted,strShippedStatus,strMpesaCode,strLatLng,strPaymentMethod) VALUES ('$strDocumentId','$strUserId','$strOrderNumber','$strDate','$strAmount','$strDeliveryFee','$strDeleted','$strShippedStatus','$strMpesaCode','$strLatLng','$strPaymentMethod')";
        
@@ -39,6 +32,4 @@
     }
     // echoing JSON response
     echo json_encode($response);
-        
-    }
 ?>
