@@ -35,7 +35,7 @@
     } else {
         // failed to insert row
         $response["status"] = "1";
-        $response["message"] = "Error: ".mysqli_error($conn);
+        $response["message"] = "Error: ".mysqli_error($adding);
     }
     // echoing JSON response
     echo json_encode($response);
