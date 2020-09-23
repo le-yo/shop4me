@@ -1,6 +1,7 @@
 <?php
-
-    require_once('dbConnect.php');
+ require_once('dbConnect.php');
+    
+    $response = array(); 
     
     if(isset($_REQUEST['strUserId']) && isset($_REQUEST['strUsername']) 
     && isset($_REQUEST['strPhone']) && isset($_REQUEST['strImageUrl'])
@@ -23,8 +24,6 @@
         $adding = "INSERT INTO c_users (strUserId,strUsername,strPhone,strImageUrl,strEmail,strYear,strPassword,strRole) VALUES ('$strUserId','$strUsername','$strPhone','$strImageUrl','$strEmail','$strYear','$strPassword','$strRole')";
        
        $result = mysqli_query($conn,$adding);
-    
-    $response = array(); 
         
     if ($result>0) {
         // successfully inserted into database
@@ -33,7 +32,7 @@
     } else {
         // failed to insert row
         $response["status"] = "1";
-        $response["message"] = "Error: ".mysqli_error($result);
+        $response["message"] = "Error: ".mysqli_error($con);
     }
     // echoing JSON response
     echo json_encode($response);
