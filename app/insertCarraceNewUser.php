@@ -33,7 +33,7 @@
     } else {
         // failed to insert row
         $response["status"] = "1";
-        $response["message"] = "Error: ".mysqli_error($con);
+        $response["message"] = "Error: ".mysql_error($con);
     }
     // echoing JSON response
     echo json_encode($response);
