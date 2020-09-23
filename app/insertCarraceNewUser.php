@@ -2,8 +2,6 @@
 
     require_once('dbConnect.php');
     
-    $response = array(); 
-    
     if(isset($_REQUEST['strUserId']) && isset($_REQUEST['strUsername']) 
     && isset($_REQUEST['strPhone']) && isset($_REQUEST['strImageUrl'])
     && isset($_REQUEST['strEmail']) && isset($_REQUEST['strYear'])
@@ -25,6 +23,8 @@
         $adding = "INSERT INTO c_users (strUserId,strUsername,strPhone,strImageUrl,strEmail,strYear,strPassword,strRole) VALUES ('$strUserId','$strUsername','$strPhone','$strImageUrl','$strEmail','$strYear','$strPassword','$strRole')";
        
        $result = mysqli_query($conn,$adding);
+    
+    $response = array(); 
         
     if ($result>0) {
         // successfully inserted into database
